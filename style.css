@@ -1,0 +1,154 @@
+/*  1. css reset 
+    2. utilize css grid 
+    3. utilize flex box 🥊 
+    4: utilize css variables
+    5. create a media query for mobile first
+ */
+
+ /* css variables  */
+:root {
+    --fontIBMLight: 'IBM Plex Mono', monospace;
+}
+
+ /* css reset 2020 */
+ /* https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */
+ /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* strip all pre-defined css rules  */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media only screen and (max-width: 896px) {
+    /* layout the grid  */
+    .grid-template-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto, 1fr, auto;
+        grid-gap: 5px;
+        grid-template-areas: 
+         "title"
+         "nav"
+         "section";
+    }
+
+    .js_documentation {
+        grid-area: title;
+        text-align: center;
+        font-family: var(--fontIBMLight);
+        margin: 15px;
+    }
+
+    .top_navigation {
+        grid-area: nav;
+        height: 230px;
+        overflow: scroll;
+    }
+
+    .top_navigation a {
+        color: #4D4E53;
+    }
+
+    .top_navigation li {
+        color: #4D4E53;
+        border-bottom: 1px solid red;
+    }
+
+
+    .main-doc {
+        grid-area: section;
+    }
+
+    .title {
+        border-bottom: 1px solid black;
+    }
+
+    /* nav bar css  */
+    /* .navList li a {
+        color: #4D4E53;
+    } */
+
+    /* li {
+        border-bottom: solid 1px red;
+    } */
+}
+
+
