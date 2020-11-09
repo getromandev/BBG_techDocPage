@@ -14,7 +14,7 @@
     </header>
 
     <header>
-        <nav class="top_navigation">
+        <nav id="navbar">
             <ul class="navList">
                 <li>
                     <a href="#Introduction">Introduction</a>
@@ -66,7 +66,9 @@
     <main id='main-doc'>
 
         <section class="main-section" id='Introduction'>
-            <header> Introduction </header>
+            <header> 
+                <h1>Introduction</h1> 
+            </header>
             <article>
                 <p>
                     JavaScript is a cross-platform, object-oriented scripting language. 
@@ -100,7 +102,9 @@
         </section>
 
         <section class="main-section" id='What_you_should_already_know'>
-            <header>What you should already know</header>
+            <header>
+                <h1>What you should already know</h1>
+            </header>
             <article>
                 <p>This guide assumes you have the following basic background:</p>
                 <ul>
@@ -117,7 +121,9 @@
         </section>
 
         <section class="main-section" id='JavaScript_and_Java'>
-            <header>Javascript and Java</header>
+            <header>
+                <h1>Javascript and Java</h1>
+            </header>
             <article>
                 <p>
                     JavaScript and Java are similar in some ways but fundamentally 
@@ -146,7 +152,9 @@
         </section>
 
         <section class="main-section" id='Hello_world'>
-            <header>Hello world</header>
+            <header>
+                <h1>Hello World</h1>
+            </header>
             <article>
                 <p>
                     To get started with writing JavaScript, open the Scratchpad and write 
@@ -160,7 +168,9 @@
         </section>
 
         <section class="main-section" id='variables'>
-            <header>Variables</header>
+            <header>
+               <h1>Variables</h1>
+            </header>
             <article>
                 <p>
                     You use variables as symbolic names for values in your application. 
@@ -181,23 +191,31 @@
         </section>
 
         <section class="main-section" id='Declaring_variables'>
-            <header>Declaring variables</header>
+            <header>
+                <h1>Declaring variables</h1>
+            </header>
             <article>
                 <p>You can declare a variable in three ways:</p>
                 <p>
                     With the keyword var. For example,
-                    <code>var x = 42.</code>
+                    <code>
+                        var x = 42.
+                    </code>
                     This syntax can be used to declare both local and global variables.
                 </p>
                 <p>
                     By simply assigning it a value. For example,
-                    <code>x = 42.</code>
+                    <code>
+                        x = 42.
+                    </code>
                     This always declares a global variable. It generates a strict JavaScript warning. 
                     You shouldn't use this variant.
                 </p>
                 <p>
                     With the keyword let. For example,
-                    <code>let y = 13.</code>
+                    <code>
+                        let y = 13.
+                    </code>
                     This syntax can be used to declare a block scope local variable. 
                     See Variable scope below.
                 </p>
@@ -205,7 +223,9 @@
         </section>
 
         <section class="main-section" id='Variable_scope'>
-            <header>Variable scope</header>
+            <header>
+                <h1>Variable scope</h1>
+            </header>
             <article>
                 <p>
                     When you declare a variable outside of any function, it is called a global variable, 
@@ -221,7 +241,9 @@
                     is an if statement.
                 </p>
                 <p>
-                    <code>if (true) { var x = 5; } console.log(x); // 5</code>
+                    <code>
+                        if (true) { var x = 5; } console.log(x); // 5
+                    </code>
                     This behavior changes, when using the let declaration introduced in ECMAScript 2015.
                     <code>
                         if (true) { let y = 5; } console.log(y); // ReferenceError: y is not
@@ -232,7 +254,9 @@
         </section>
 
         <section class="main-section" id='Global_variables'>
-            <header>Global variables</header>
+            <header>
+                <h1>Global variables</h1>
+            </header>
             <article>
                 <p>
                     Global variables are in fact properties of the global object. 
@@ -249,13 +273,17 @@
         </section>
 
         <section class="main-section" id='Constants'>
-            <header>Constants</header>
+            <header>
+                <h1>Constants</h1>
+            </header>
             <article>
                 <p>
                     You can create a read-only, named constant with the const keyword. The syntax of a constant 
                     identifier is the same as for a variable identifier: it must start with a letter, underscore 
                     or dollar sign and can contain alphabetic, numeric, or underscore characters.
-                    <code>const PI = 3.14;</code>
+                    <code>
+                        const PI = 3.14;
+                    </code>
                 </p>
                 <p>
                     A constant cannot change value through assignment or be re-declared while the 
@@ -285,7 +313,9 @@
         </section>
 
         <section class="main-section" id='Data_types'>
-            <header>Data types</header>
+            <header>
+                <h1>Data types</h1>
+            </header>
             <article>
                 <p>The latest ECMAScript standard defines seven data types:</p>
                 <ul>
@@ -316,7 +346,9 @@
         </section>
 
         <section class="main-section" id='if...else_statements'>
-            <header>if...else statements</header>
+            <header>
+                <h1>if...else statements</h1>
+            </header>
             <article>
 
                 <p>
@@ -324,7 +356,9 @@
                     Use the optional else clause to execute a statement if the condition is false. 
                     An if statement looks as follows:
 
-                    <code>if (condition) { statement_1; } else { statement_2; }</code>
+                    <code>
+                        if (condition) { statement_1; } else { statement_2; }
+                    </code>
 
                     condition can be any expression that evaluates to true or false. 
                     See Boolean for an explanation of what evaluates to true and false. 
@@ -360,27 +394,35 @@
                     because the assignment can be confused with equality when glancing over the code. 
                     For example, do not use the following code:
 
-                    <code>if (x = y) { /* statements here */ }</code>
+                    <code>
+                        if (x = y) { /* statements here */ }
+                    </code>
                 </p>
 
                 <p>
                     If you need to use an assignment in a conditional expression, a common practice 
                     is to put additional parentheses around the assignment. For example:
 
-                    <code>if ((x = y)) { /* statements here */ }</code>
+                    <code>
+                        if ((x = y)) { /* statements here */ }
+                    </code>
                 </p>
 
             </article>
         </section>
 
         <section class="main-section" id='while_statements'>
-            <header>while statements</header>
+            <header>
+                <h1>while statements</h1>
+            </header>
             <article>
                 <p>
                     A while statement executes its statements as long as a specified condition evaluates to true. 
                     A while statement looks as follows:
                 </p>
-                <code>while (condition) statement</code>
+                <code>
+                    while (condition) statement
+                </code>
 
                 <p>
                     If the condition becomes false, statement within the loop stops executing and control passes to the 
@@ -392,7 +434,9 @@
                     Example:
 
                     The following while loop iterates as long as n is less than three:
-                    <code>var n = 0; var x = 0; while (n < 3) { n++; x += n; }</code>
+                    <code>
+                        var n = 0; var x = 0; while (n < 3) { n++; x += n; }
+                    </code>
                 </p>
 
                 <p>
@@ -413,7 +457,9 @@
         </section>
 
         <section class="main-section" id='Function_declaration'>
-            <header>Function declaration</header>
+            <header>
+                <h1>Function declaration</h1>
+            </header>
             <article>
                 <p>
                     A function definition (also called a function declaration, or function statement) 
@@ -429,7 +475,9 @@
                 <p>
                     For example, the following code defines a simple function named square:
 
-                    <code>function square(number) { return number * number; }</code>
+                    <code>
+                        function square(number) { return number * number; }
+                    </code>
                 </p>
                 
 
@@ -438,7 +486,9 @@
                     says to return the argument of the function (that is, number) multiplied by itself. 
                     The return statement specifies the value returned by the function.
 
-                    <code>return number * number;</code>
+                    <code>
+                        return number * number;
+                    </code>
                 </p>
 
                 <p>
@@ -450,7 +500,9 @@
         </section>
 
         <section class="main-section" id='Reference'>
-            <header>Reference</header>
+            <header>
+                <h1>Reference</h1>
+            </header>
             <article>
                 <ul>
                     <li>
