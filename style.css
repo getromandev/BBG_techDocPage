@@ -1,0 +1,212 @@
+/*  1. css reset 
+    2. utilize css grid 
+    3. utilize flex box 🥊 
+    4: utilize css variables
+    5. create a media query for mobile first
+ */
+
+ /* css variables  */
+:root {
+    --fontIBM: 'IBM Plex Mono', monospace;
+}
+
+ /* css reset 2020 */
+ /* https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */
+ /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  font-family: var(--fontIBM);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* strip all pre-defined css rules  */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* css reset 2020 END */
+
+.grid-template-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 70px 1000px;
+  grid-template-areas: "title section"
+                       "aside section";
+}
+
+#navbar {
+  grid-area: aside;
+  height: 230px;
+  border: 1px solid black;
+}
+
+#main-doc {
+  grid-area: section;
+  padding: 20px 30px 20px 30px;
+  overflow: scroll;
+}
+
+.title {
+  padding: 20px;
+  border-right: 2px solid gray;
+  border-bottom: 1px solid gray;
+  grid-area: title;
+}
+
+/*********
+ MEDIA QUERIES
+*********/
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* @media only screen and (min-width: 500px) and (max-width: 896px) */
+
+@media only screen and (mix-width: 896px) {
+    /* layout the grid  */
+    html #testMobile {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto, 1fr, auto;
+        grid-template-areas: 
+         "title"
+         "nav"
+         "section";
+    }
+
+    article {
+      font-weight: 300;
+      padding-left: 20px;
+      padding-bottom: 20px;
+    }
+
+    code {
+     background-color: #f7f7f7; 
+     white-space: pre-line;
+     display: block;
+     border-radius: 10px;
+     text-align: left;
+     line-height: 2;
+     padding-left: 20px;
+     padding-bottom: 20px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+    }
+
+    h1 {
+      padding-bottom: 25px;
+    }
+
+    .js_documentation {
+        grid-area: title;
+        text-align: center;
+        margin: 15px;
+    }
+
+    .mdn {
+      text-decoration: underline;
+    }
+
+    #navbar {
+        grid-area: nav;
+        height: 230px;
+        overflow: scroll;
+        border: 1px solid black;
+    }
+
+    #navbar a {
+        color: #4D4E53;
+    }
+
+    #navbar li {
+        color: #4D4E53;
+        border-bottom: 1px solid grey;
+    }
+
+    .navList li {
+      padding: 10px 20px 10px 20px;
+    }
+
+    #main-doc {
+        grid-area: section;
+        padding: 20px 30px 20px 30px;
+    }
+
+    .title {
+        border-bottom: 1px solid black;
+    }
+
+
+}
+
+
