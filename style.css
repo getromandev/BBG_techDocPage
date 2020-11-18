@@ -132,12 +132,12 @@ select {
 
 /* @media only screen and (min-width: 500px) and (max-width: 896px) */
 
-@media only screen and (mix-width: 896px) {
+@media only screen and (max-width: 896px) {
     /* layout the grid  */
-    html #testMobile {
+    .grid-template-container {
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: auto, 1fr, auto;
+        grid-template-rows: auto 1fr auto;
         grid-template-areas: 
          "title"
          "nav"
@@ -205,8 +205,4 @@ select {
     .title {
         border-bottom: 1px solid black;
     }
-
-
 }
-
-
